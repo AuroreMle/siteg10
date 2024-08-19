@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="footer-content">
-      <img src="@/assets/logotype.png" alt="Logo" class="footer-logo" />
+      <img src="@/assets/logotype.png" alt="Logo TheTipTop" class="footer-logo" />
       <nav>
         <router-link to="/jeu-concours">Jeu concours</router-link>
         <router-link to="/a-propos">À propos</router-link>

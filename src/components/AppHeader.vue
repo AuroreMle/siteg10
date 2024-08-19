@@ -2,7 +2,7 @@
   <header>
     <div class="header-content">
       <router-link to="/">
-        <img src="@/assets/logotype.png" alt="Logo" class="logo" />
+        <img src="@/assets/logotype.png" alt="Logo TheTipTop" class="logo" />
       </router-link>
       <nav>
         <router-link to="/jeu-concours">Jeu concours</router-link>
@@ -40,7 +40,7 @@ export default {
   methods: {
     checkAuth() {
       // Vérifiez l'état de connexion ici
-      // Exemple : vérifier la présence d'un token ou d'une info dans localStorage
+      // vérifier la présence d'un token ou d'une info dans localStorage
       const userRole = localStorage.getItem('userRole'); // Peut être 'user' ou 'admin'
       this.isLoggedIn = !!userRole; // Détermine si l'utilisateur est connecté
 

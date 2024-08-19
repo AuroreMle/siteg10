@@ -7,7 +7,7 @@
       <div class="text-section">
         <h1>Jouez, la chance vous sourie !</h1>
         <p>100% des participants sont gagnants. Tentez de gagner un an de thés !</p>
-        <button class="btn participate-btn" href="/participer">Participer</button>
+        <button class="btn participate-btn" ">Participer</button>
       </div>
       <div class="image-section">
         <img src="@/assets/green-tea.png" alt="Green Tea" />

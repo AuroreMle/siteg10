@@ -1,6 +1,6 @@
 <template>
   <div class="participer-page">
-    <img src="@/assets/logotype.png" alt="Logotype" class="logotype-image"/>
+    <img src="@/assets/logotype.png" alt="Logo TheTipTop" class="logotype-image"/>
     <p class="instruction-text">Inscrivez-vous en tant qu'administrateur</p>
     
     <button class="signup-button facebook-button">S’inscrire avec Facebook</button>
