@@ -44,8 +44,11 @@ export default {
 
         const data = await response.json();
         if (response.ok) {
+          // Stocker le userId dans le localStorage
+          localStorage.setItem('userId', data.user.id);
+          
           alert('Connexion réussie!');
-          this.$router.push('/user/dashboard'); // Redirection vers le tableau de bord après la connexion réussie
+          this.$router.push('/user/dashboard'); // Conserver la redirection originale
         } else {
           alert(data.message);
         }
@@ -56,7 +59,6 @@ export default {
   }
 };
 </script>
-
 
 
 

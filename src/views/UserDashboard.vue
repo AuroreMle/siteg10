@@ -45,7 +45,8 @@ export default {
       code: '', // Code saisi par l'utilisateur
       history: [], // Historique des gains
       alertMessage: '', // Message d'alerte
-      alertClass: '' // Classe CSS pour l'alerte
+      alertClass: '', // Classe CSS pour l'alerte
+      userId: null // ID de l'utilisateur
     };
   },
   methods: {
@@ -55,7 +56,7 @@ export default {
         if (response.status === 200 && response.data.message === 'Code valide !') {
           this.alertMessage = 'Code valide !';
           this.alertClass = 'alert-success';
-          
+
           // Ajouter l'entrée à l'historique
           const newEntry = {
             date: new Date().toLocaleDateString(),
@@ -88,19 +89,26 @@ export default {
           expiryDate: new Date(entry.expiry_date).toLocaleDateString()
         }));
       } catch (error) {
-        console.error('Erreur lors de la récupération de l\'historique: ', error);
+        console.error('Erreur lors de la récupération de l\'historique : ', error);
       }
     }
   },
-  created() {
-    // Supposons que userId est stocké dans le session storage ou autre
-    this.userId = sessionStorage.getItem('userId');
-    if (this.userId) {
-      this.fetchHistory();
-    }
-  }
-};
+  mounted() {
+  // Récupération du userId via les paramètres de la route ou localStorage
+  this.userId = this.$route.params.userId || localStorage.getItem('userId');
 
+  if (this.userId) {
+    // Si userId est récupéré avec succès, on récupère l'historique
+    this.fetchHistory();
+  } else {
+    // Si userId n'est pas défini, afficher un message d'erreur dans la console
+    console.error('Erreur : userId non défini');
+    this.alertMessage = 'Erreur : ID utilisateur non fourni. Veuillez vous reconnecter.';
+    this.alertClass = 'alert-error';
+  }
+}
+
+};
 </script>
 
 
